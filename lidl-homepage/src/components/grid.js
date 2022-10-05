@@ -5,8 +5,11 @@ import bike from '../assets/bici.webp';
 const Grid = () => {
   return (
     <div className='grid'>
-      <img className='furniture-highlighted' src={roller} alt='highlighted image of a family rollerblading'></img>
-      <img className='furniture' src={bike} alt='image of two persons biking'></img>
+      <div className='highlighted'>
+        <button> Add to basket </button>
+        <img className='furniture-highlighted' src={roller} alt='family rollerblading'></img>
+      </div>
+      <img className='furniture' src={bike} alt='two persons biking'></img>
     </div>
   )
 }
