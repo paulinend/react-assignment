@@ -1,22 +1,17 @@
 .grid {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  align-items: stretch;
+  width: 100%;
+  .card {
+    max-width: 100%;
+    .furniture-img {
+      width: 100%;
+    }
+  }
   .highlighted {
     position: relative;
-    button {
-      position: absolute;
-      top: 20px;
-      left: 10px;
-      background-color: $buttonColor;
-      color: $whiteColor;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      text-transform: uppercase;
-    }
-    button:hover,
-    button:focus {
-      background-color: #c5201c;
-    }
   }
 }

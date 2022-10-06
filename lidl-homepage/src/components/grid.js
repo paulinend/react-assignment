@@ -1,15 +1,17 @@
-import React from 'react';
 import roller from '../assets/patines.webp';
 import bike from '../assets/bici.webp';
+import Button from './button';
 
 const Grid = () => {
   return (
     <div className='grid'>
-      <div className='highlighted'>
-        <button> Add to basket </button>
-        <img className='furniture-highlighted' src={roller} alt='family rollerblading'></img>
+      <div className='card highlighted'>
+        <Button title="Add to Basket"/>
+        <img className='furniture-img' src={roller} alt='family rollerblading'></img>
       </div>
-      <img className='furniture' src={bike} alt='two persons biking'></img>
+      <div className='card'>
+        <img className='furniture-img' src={bike} alt='two persons biking'></img>
+      </div>
     </div>
   )
 }
