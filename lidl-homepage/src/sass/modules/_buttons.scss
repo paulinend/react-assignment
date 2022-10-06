@@ -1,0 +1,15 @@
+button {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  background-color: $buttonColor;
+  color: $whiteColor;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+button:hover,
+button:focus {
+  background-color: #c5201c;
+}
