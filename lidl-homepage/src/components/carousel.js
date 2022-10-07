@@ -5,15 +5,14 @@ import chevronLeft from '../assets/icons/left-chevron.png';
 
 
 const Carousel = (props) => {
-  const {children, show} = props
+  const {carouselData, show} = props
 
   const [currentIndex, setCurrentIndex] = useState(0)
-    const [length, setLength] = useState(children.length)
+    const [length, setLength] = useState(carouselData.length)
 
-    // Set the length to match current children from props
     useEffect(() => {
-        setLength(children.length)
-    }, [children])
+        setLength(carouselData.length)
+    }, [carouselData])
 
     const next = () => {
       if (currentIndex < (length - show)) {
@@ -41,7 +40,7 @@ const Carousel = (props) => {
             className={`carousel-content show-${show}`}
             style={{ transform: `translateX(-${currentIndex * (100 / show)}%)` }}
             >
-            {children}
+            {carouselData}
           </div>
         </div>
           {
