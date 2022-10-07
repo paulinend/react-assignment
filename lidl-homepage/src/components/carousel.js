@@ -33,7 +33,7 @@ const Carousel = (props) => {
         {
           currentIndex > 0 &&
           <button onClick={prev}  className="carousel-arrow-prev">
-            <img className='chevronLEft' src={chevronLeft} alt='next button'></img>
+            <img className='chevronLeft' src={chevronLeft} alt='next button'></img>
           </button>
         }
         <div className="carousel-content-wrapper">

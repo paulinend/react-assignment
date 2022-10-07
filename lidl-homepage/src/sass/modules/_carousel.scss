@@ -52,14 +52,6 @@
           font-weight: 500;
         }
       }
-      .carousel-content.show-7 > * {
-        @include lg {
-          width: calc(100% / 7);
-        }
-        @include breakpoint(480px) {
-          width: calc(100% / 2);
-        }
-      }
     }
   }
 }
