@@ -1,7 +1,8 @@
-const Button = (props) => {
+
+const Button = ({title, handleClick}) => {
   return (
     <div className="button">
-      <button>{props.title}</button>
+      <button className="btn-add" onClick={event => handleClick(event, 1)}>{title}</button>
     </div>
   )
 }
