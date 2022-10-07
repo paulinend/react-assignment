@@ -1,7 +1,9 @@
 import React from 'react';
+
 import Header from './components/header';
 import Grid from './components/grid';
 import Carousel from './components/carousel';
+import Accordion from './components/accordion';
 import './sass/main.scss'
 
 function App() {
