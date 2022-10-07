@@ -1,0 +1,22 @@
+.accordion-item {
+  // display: flex;
+  border-bottom: 1px solid #d3d3d3;
+  @include lg {
+    display: none;
+  }
+  .accordion-title {
+    background-color: $backgroudColorText;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #595959;
+    .chevronDown,
+    .chevronRight {
+      margin-right: 5px;
+    }
+    .accordion-title:hover {
+      background-color: white;
+      color: blue;
+    }
+  }
+}
