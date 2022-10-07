@@ -50,7 +50,7 @@ const App = () => {
     {
       id: 1,
       title: 'Accordion Button',
-      grid: <Grid />,
+      grid: <Grid  count={count} setCount={setCount}/>,
       carousel: <Carousel show={7}>
       {carouselData.map(({id, alt, img}) => (
         <div className='carousel-item'>
@@ -65,7 +65,7 @@ const App = () => {
     {
       id: 2,
       title: 'Accordion Button',
-      grid: <Grid />,
+      grid: <Grid count={count} setCount={setCount}/>,
       carousel: <Carousel show={7}>
       {carouselData.map(({id, alt, img}) => (
         <div className='carousel-item'>
@@ -80,7 +80,7 @@ const App = () => {
     {
       id: 3,
       title: 'Accordion Button',
-      grid: <Grid />,
+      grid: <Grid count={count} setCount={setCount}/>,
       carousel: <Carousel show={7}>
       {carouselData.map(({id, alt, img}) => (
         <div className='carousel-item'>
@@ -95,7 +95,7 @@ const App = () => {
     {
       id: 4,
       title: 'Accordion Button',
-      grid: <Grid />,
+      grid: <Grid  count={count} setCount={setCount}/>,
       carousel: <Carousel show={7}>
       {carouselData.map(({id, alt, img}) => (
         <div className='carousel-item'>
