@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import Header from './components/header';
 import Grid from './components/grid';
@@ -19,6 +19,18 @@ import furniture from './assets/muebles.webp';
 import shoes from './assets/zapatillas.webp';
 
 const App = () => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const count = JSON.parse(localStorage.getItem('count'));
+    if (count) {
+      setCount(count)
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('count', JSON.stringify(count));
+  }, [count]);
 
   const carouselData = [
     { id: 1, img: diy, alt: 'image of the link for the home DIY' },
@@ -99,7 +111,7 @@ const App = () => {
   
   return (
     <div className="App">
-      <Header/>
+      <Header count={count} setCount={setCount} />
       <div className='accordion'>
         {accordionData.map(({title, grid, carousel, id}) => (
           <Accordion key={id} title={title} grid={grid} carousel={carousel}/>
@@ -107,7 +119,7 @@ const App = () => {
 
       </div>
       <div className="hidden-grid">
-          <Grid />
+          <Grid count={count} setCount={setCount}/>
         <Carousel show={7}>
           {carouselData.map(({id, alt, img}) => (
             <div className='carousel-item'>
