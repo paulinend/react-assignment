@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-
 import roller from '../assets/patines.webp';
 import bike from '../assets/bici.webp';
 import Button from './button';
