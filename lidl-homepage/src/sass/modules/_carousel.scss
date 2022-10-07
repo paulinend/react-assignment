@@ -10,10 +10,10 @@
     .carousel-arrow-next {
       position: absolute;
       z-index: 1;
-      top: 43%;
+      top: 52%;
       transform: translateY(-50%);
       width: 48px;
-      height: 76%;
+      height: 95%;
       background-color: white;
       cursor: pointer;
       border: 1px solid #ddd;
@@ -51,9 +51,6 @@
           color: $titleColor;
           font-weight: 500;
         }
-      }
-      .carousel-content.show-7 > * {
-        width: calc(100% / 7);
       }
     }
   }
