@@ -7,12 +7,34 @@
   width: 100%;
   .card {
     max-width: 100%;
-    .furniture-img {
+    @include xl {
+      height: 450px;
+    }
+    @include xxl {
+      height: 500px;
+    }
+    @include breakpoint(480px) {
+      width: 100%;
+    }
+    .card-img {
       width: 100%;
       height: 100%;
     }
   }
+  .card:first-child {
+    width: 59%;
+  }
+  .card:nth-child(2) {
+    width: 40%;
+  }
   .highlighted {
     position: relative;
+    // width: 600px;
+  }
+}
+
+.App .hidden-grid {
+  @include breakpoint(480px) {
+    display: none;
   }
 }
