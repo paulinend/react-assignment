@@ -20,6 +20,14 @@ import shoes from './assets/zapatillas.webp';
 
 const App = () => {
   const [count, setCount] = useState(0);
+  const [isAccordionActive, setIsAccordionActive] = useState(1);
+
+  const handleToggle = (id) => {
+    if (isAccordionActive === id) {
+      return setIsAccordionActive("0");
+    }
+   setIsAccordionActive(id);
+  };
 
   useEffect(() => {
     const count = JSON.parse(localStorage.getItem('count'));
@@ -51,10 +59,10 @@ const App = () => {
       id: 1,
       title: 'Accordion Button',
       grid: <Grid  count={count} setCount={setCount}/>,
-      carousel: <Carousel show={7}>
+      carousel: <Carousel show={3}>
       {carouselData.map(({id, alt, img}) => (
-        <div className='carousel-item'>
-        <img key={id} src={img} alt={alt}></img>
+        <div key={id} className='carousel-item'>
+        <img src={img} alt={alt}></img>
         <div className='link-name'>
           Link
         </div>
@@ -66,10 +74,10 @@ const App = () => {
       id: 2,
       title: 'Accordion Button',
       grid: <Grid count={count} setCount={setCount}/>,
-      carousel: <Carousel show={7}>
+      carousel: <Carousel show={3}>
       {carouselData.map(({id, alt, img}) => (
-        <div className='carousel-item'>
-        <img key={id} src={img} alt={alt}></img>
+        <div key={id} className='carousel-item'>
+        <img src={img} alt={alt}></img>
         <div className='link-name'>
           Link
         </div>
@@ -81,10 +89,10 @@ const App = () => {
       id: 3,
       title: 'Accordion Button',
       grid: <Grid count={count} setCount={setCount}/>,
-      carousel: <Carousel show={7}>
+      carousel: <Carousel show={3}>
       {carouselData.map(({id, alt, img}) => (
-        <div className='carousel-item'>
-        <img key={id} src={img} alt={alt}></img>
+        <div key={id} className='carousel-item'>
+        <img src={img} alt={alt}></img>
         <div className='link-name'>
           Link
         </div>
@@ -96,10 +104,10 @@ const App = () => {
       id: 4,
       title: 'Accordion Button',
       grid: <Grid  count={count} setCount={setCount}/>,
-      carousel: <Carousel show={7}>
+      carousel: <Carousel show={3}>
       {carouselData.map(({id, alt, img}) => (
-        <div className='carousel-item'>
-        <img key={id} src={img} alt={alt}></img>
+        <div key={id} className='carousel-item'>
+        <img src={img} alt={alt}></img>
         <div className='link-name'>
           Link
         </div>
@@ -114,7 +122,15 @@ const App = () => {
       <Header count={count} setCount={setCount} />
       <div className='accordion'>
         {accordionData.map(({title, grid, carousel, id}) => (
-          <Accordion key={id} title={title} grid={grid} carousel={carousel}/>
+          <Accordion 
+            onToggle={() => handleToggle(id)} 
+            key={id} 
+            id={id} 
+            title={title} 
+            grid={grid} 
+            carousel={carousel}
+            active={isAccordionActive === id}
+          />
           ))}
 
       </div>
@@ -122,8 +138,8 @@ const App = () => {
           <Grid count={count} setCount={setCount}/>
         <Carousel show={7}>
           {carouselData.map(({id, alt, img}) => (
-            <div className='carousel-item'>
-            <img key={id} src={img} alt={alt}></img>
+            <div key={id} className='carousel-item'>
+            <img src={img} alt={alt}></img>
             <div className='link-name'>
               Link
             </div>
