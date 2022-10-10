@@ -1,5 +1,24 @@
-.tabs {
+.tabs-container {
   position: absolute;
-  bottom: 0;
-  display: flex;
+  bottom: 0px;
+  width: 100%;
+  @include breakpoint(720px) {
+    display: none;
+  }
+  .tab-list {
+    display: flex;
+    flex-direction: row;
+    .active-tabs {
+      color: blue;
+      background: #eeeded;
+    }
+  }
+  .tab-content {
+    display: none;
+    width: 100%;
+  }
+
+  .active-content {
+    display: flex;
+  }
 }

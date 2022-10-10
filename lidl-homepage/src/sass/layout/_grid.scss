@@ -5,6 +5,11 @@
   flex-flow: row wrap;
   align-items: stretch;
   width: 100%;
+  position: relative;
+  // @include breakpoint(720px) {
+  //   display: none;
+  // }
+
   .card {
     max-width: 100%;
     @include xl {
@@ -27,14 +32,10 @@
   .card:nth-child(2) {
     width: 40%;
   }
-  .highlighted {
-    position: relative;
-    // width: 600px;
-  }
 }
 
 .App .hidden-grid {
-  @include breakpoint(480px) {
+  @include breakpoint(720px) {
     display: none;
   }
 }

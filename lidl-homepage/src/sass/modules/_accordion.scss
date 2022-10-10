@@ -19,4 +19,7 @@
       color: blue;
     }
   }
+  .accordion-content {
+    transition: height ease 0.2s;
+  }
 }
