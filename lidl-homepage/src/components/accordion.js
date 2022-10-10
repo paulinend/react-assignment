@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
 import chevronRight from '../assets/icons/right-chevron.png';
 import chevronDown from '../assets/icons/chevron.png';
 
-const Accordion = ({ title, grid, carousel }) => {
-  const [isActive, setIsActive] = useState(false);
+const Accordion = ({ onToggle, active, title, grid, carousel }) => {
+
 
   return (
-    <div className="accordion-item">
-      <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
-        <div>{isActive ? 
+    <div className={`accordion-item ${active ? "active" : ""}`}>
+      <div className="accordion-title" onClick={onToggle}>
+        <div>{active ? 
         <img className='chevronDown' src={chevronDown} alt='chevron to open the accordion menu'></img> :
         <img className='chevronRight' src={chevronRight} alt='chevron to close the accordion menu'></img>
       }</div>
       <div>{title}</div>
       </div>
-      {isActive && <div className="accordion-content">
+      {active && <div className={`accordion-content ${active ? "open" : ""}`}>
         {grid}
         {carousel}
         </div>}
