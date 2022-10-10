@@ -13,12 +13,12 @@ const Grid = ({count, setCount}) => {
     <div className='grid'>
       <div className='card highlighted'>
         <Button handleClick={handleClick} title="Add to Basket"/>
-        <Tabs />
         <img className='card-img' src={roller} alt='family rollerblading'></img>
       </div>
       <div className='card'>
         <img className='card-img' src={bike} alt='two persons biking'></img>
       </div>
+        <Tabs />
     </div>
   )
 }
